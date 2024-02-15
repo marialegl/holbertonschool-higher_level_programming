@@ -1,9 +1,12 @@
 #!/usr/bin/python3
-import roman
-
-
 def roman_to_int(roman_string):
-    if not isinstance(roman_string, str) or roman_string is None:
-        return (0)
-    number_int = roman.fromRoman(roman_string)
-    return (number_int)
+    rom = {"I": 1, "V": 5, "X": 10, "L": 50, "C": 100, "D": 500, "M": 1000}
+
+    ans = 0
+    n_len = len(roman_string)
+    for (i, v) in enumerate(roman_string):
+        if i < n_len - 1 and rom[v] < rom[roman_string[i + 1]]:
+            ans -= rom[v]
+        else:
+            ans += rom[v]
+    return ans
