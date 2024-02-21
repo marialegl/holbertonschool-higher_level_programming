@@ -1,6 +1,15 @@
 #!/usr/bin/python3
+"""Square Class
+
+Square Class that defines a square by
+based on file 2-square
+"""
+
+
 class Square:
-    """Square with size"""
+    """
+    Square with size
+    """
     def __init__(self, size=0):
         """Constructor of square object
         Size must  be a positive integer"""
