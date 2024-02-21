@@ -1,4 +1,11 @@
 #!/usr/bin/python3
+"""Square Class
+
+Square Class that defines a square by
+based on file 3-square
+"""
+
+
 class Square:
     """Square with size"""
     def __init__(self, size=0):
