@@ -4,5 +4,9 @@
 This class represents a square.
 """
 
+
 class Square:
+    """
+    Square that defines a square
+    """
     pass
