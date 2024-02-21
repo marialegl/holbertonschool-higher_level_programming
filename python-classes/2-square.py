@@ -1,6 +1,14 @@
 #!/usr/bin/python3
+"""Square Class
+
+This class represents a square.
+"""
+
+
 class Square:
-    """This class represents a square with size"""
+    """
+    This class represents a square with size
+    """
     def __init__(self, size=0):
         """Constructor of square object"""
         if not isinstance(size, int):
