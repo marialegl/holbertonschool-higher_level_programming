@@ -1,12 +1,12 @@
 #!/usr/bin/python3
 """Rectangle Class
 
-This class represents a square.
+This class represents a rectangle.
 """
 
 
 class Rectangle:
     """
-    Square that defines a square
+    Rectangle class that defines a rectangle.
     """
     pass
