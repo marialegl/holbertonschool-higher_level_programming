@@ -1,17 +1,18 @@
 #!/usr/bin/python3
 """Rectangle Class
 
-This class represents a square.
+This class represents a rectangle.
 """
 
 
 class Rectangle:
     """
-    Rectangle that defines a square
+    Rectangle class that defines a rectangle.
+    Instantiation with  width and height.
     """
     def __init__(self, width=0, heigth=0):
-         self.__width = width
-         self.__heigth = heigth
+        self.__width = width
+        self.__heigth = heigth
 
     @property
     def width(self):
@@ -24,11 +25,11 @@ class Rectangle:
         if value < 0:
             raise ValueError("width must be >= 0")
         self._width = value
-    
+
     @property
     def height(self):
         return self._height
-    
+
     @height.setter
     def height(self, value):
         if not isinstance(value, int):
