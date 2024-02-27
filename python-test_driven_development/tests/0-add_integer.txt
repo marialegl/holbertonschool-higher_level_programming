@@ -12,6 +12,18 @@ add_integer from the 0-add_integer.py module:
 >>> add_integer(2,3)
 5
 
+>>> add_integer(0, 0)
+0
+
+>>> add_integer(-1, 0)
+-1
+
+>>> add_integer(0.5, 0.5)
+0
+
+>>> add_integer(-1.5, 1.5)
+0
+
 >>> add_integer(1e10000000, 3)
 Traceback (most recent call last):
 OverflowError: cannot convert float infinity to integer
@@ -20,3 +32,14 @@ OverflowError: cannot convert float infinity to integer
 Traceback (most recent call last):
 TypeError: a must be an integer or float
 
+>>> add_integer("hello", "1.5")
+Traceback (most recent call last):
+TypeError: a must be an integer or float
+
+>>> add_integer("hello", -1)
+Traceback (most recent call last):
+TypeError: a must be an integer or float
+
+>>> add_integer("hello", 1)
+Traceback (most recent call last):
+TypeError: a must be an integer or float
