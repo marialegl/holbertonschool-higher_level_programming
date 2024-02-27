@@ -1,9 +1,13 @@
 #!/usr/bin/python3
-"""Module to add 2 integers
+"""Module 
+to add 
+2 integers
+123
 """
-
-
 def add_integer(a, b=98):
+    """
+    comentar
+    """
     if not isinstance(a, (int, float)):
         raise TypeError("a must be an integer or float")
     if not isinstance(b, (int, float)):
