@@ -1,61 +1,32 @@
-2. Module that divides all elements of a matrix
-===============================================
+The 2-matrix_divided.py module
+======================
 
-Module and Function Description:
-================================
-The module divides all elements of a matrix by a given number and returns a new matrix with the results of the division.
+Using matrix_divided
+-------------------
 
-Function matrix_divided(matrix, div):
-=====================================
+The module divides all elements of a matrix by a
+given number and returns a new matrix with
+the results of the division.
 
-Parameters:
-===========
+First import matrix_divided from the 2-matrix_divided.py module:
 
-matrix: List of lists of numbers (integers or floats).
-div: Number (integer or float) by which the elements of the matrix will be divided.
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
 
-Behavior:
-=========
-Checks if matrix is a list of lists containing numbers (integers or floats).
-Checks if all rows of matrix have the same size.
-Checks if div is a number (integer or float) and is not equal to zero.
-Divides all elements of the matrix by div and rounds the result to two decimal places.
-Returns a new matrix with the results of the division.
-
-Test Cases:
-===========
-
-Test case for a valid matrix and valid divisor:
-===============================================
-matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
-div = 2
-Expected Result:
+>>> matrix_divided([[1, 2, 3], [4, 5, 6], [7, 8, 9]], 2)
 [[0.5, 1.0, 1.5], [2.0, 2.5, 3.0], [3.5, 4.0, 4.5]]
 
-Test case for an invalid matrix (not a list of lists):
-======================================================
+>>> matrix_divided([['a', 'b', 'c'], ['d', 'e', 'f'], ['g', 'h', 'i']], 2)
+Traceback (most recent call last):
+TypeError: matrix must be a matrix of integers/floats
 
-matrix = 123
-div = 2
-Expected to raise a TypeError with the message "matrix must be a list of lists"
+>>> matrix_divided([[1, 2, 3], [4, 5], [6, 7, 8]], 2)
+Traceback (most recent call last):
+TypeError: Each row of the matrix must have the same size
 
-Test case for a matrix with rows of different sizes:
-====================================================
+>>> matrix_divided([[1, 2, 3], [4, 5, 6], [7, 8, 9]], 'a')
+Traceback (most recent call last):
+TypeError: div must be a number
 
-matrix = [[1, 2, 3], [4, 5], [6, 7, 8]]
-div = 2
-Expected to raise a TypeError with the message "Each row of the matrix must have the same size"
-
-Test case for a divisor equal to zero:
-======================================
-
-matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
-div = 0
-Expected to raise a ZeroDivisionError with the message "division by zero"
-
-Test case for an invalid divisor (not a number):
-================================================
-
-matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
-div = 'a'
-Expected to raise a TypeError with the message "div must be a number"
+>>> matrix_divided([[1, 2, 3], [4, 5, 6], [7, 8, 9]], 0)
+Traceback (most recent call last):
+ZeroDivisionError: division by zero

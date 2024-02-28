@@ -30,16 +30,16 @@ OverflowError: cannot convert float infinity to integer
 
 >>> add_integer("hello", "como estas")
 Traceback (most recent call last):
-TypeError: a must be an integer or float
+TypeError: a must be an integer
 
 >>> add_integer("hello", "1.5")
 Traceback (most recent call last):
-TypeError: a must be an integer or float
+TypeError: a must be an integer
 
 >>> add_integer("hello", -1)
 Traceback (most recent call last):
-TypeError: a must be an integer or float
+TypeError: a must be an integer
 
 >>> add_integer("hello", 1)
 Traceback (most recent call last):
-TypeError: a must be an integer or float
+TypeError: a must be an integer
