@@ -1,55 +1,32 @@
-3. Module that that prints My name is <first name> <last name>
-==============================================================
+The 3-say_my_name.py module
+======================
 
-Module and Function Description:
-================================
-The module defines a function say_my_name that prints a person's name. It takes a first name and an optional last name as arguments.
+Using say_my_name
+-------------------
 
-Function say_my_name(first_name, last_name=""):
-===============================================
+The module defines a function say_my_name that prints
+a person's name. It takes a first name and an
+optional last name as arguments.
 
-Parameters:
-===========
+First import say_my_name from the 3-say_my_name.py module:
 
-first_name: A string representing the first name of the person.
-last_name: An optional string representing the last name of the person.
+>>> say_my_name = __import__('3-say_my_name').say_my_name
 
-Behavior:
-=========
+>>> say_my_name("John", "Doe")
+My name is John Doe
 
-Checks if first_name and last_name are strings. If not, it raises a TypeError.
-Prints the person's name in the format "My name is [first_name] [last_name]".
+>>> say_my_name("John", None)
+Traceback (most recent call last):
+TypeError: last_name must be a string
 
+>>> say_my_name(123, "Doe")
+Traceback (most recent call last):
+TypeError: first_name must be a string
 
-Test Cases:
-===========
+>>> say_my_name("John", 123)
+Traceback (most recent call last):
+TypeError: last_name must be a string
 
-Test case for valid input (both first_name and last_name are strings):
-======================================================================
-
-say_my_name("John", "Doe")
-Expected output: "My name is John Doe"
-
-Test case for only first_name provided:
-=======================================
-
-say_my_name("John")
-Expected output: "My name is John "
-
-Test case for invalid first_name (not a string):
-================================================
-
-say_my_name(123, "Doe")
-Expected to raise a TypeError with the message "first_name must be a string"
-
-Test case for invalid last_name (not a string):
-===============================================
-
-say_my_name("John", 123)
-Expected to raise a TypeError with the message "last_name must be a string"
-
-Test case for both first_name and last_name as empty strings:
-=============================================================
-
-say_my_name("", "")
-Expected output: "My name is  "
+>>> say_my_name()
+Traceback (most recent call last):
+TypeError: say_my_name() missing 1 required positional argument: 'first_name'

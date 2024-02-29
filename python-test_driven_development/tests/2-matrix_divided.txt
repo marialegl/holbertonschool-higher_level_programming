@@ -30,3 +30,6 @@ TypeError: div must be a number
 >>> matrix_divided([[1, 2, 3], [4, 5, 6], [7, 8, 9]], 0)
 Traceback (most recent call last):
 ZeroDivisionError: division by zero
+
+>>> matrix_divided([[3]], 3)
+[[1.0]]

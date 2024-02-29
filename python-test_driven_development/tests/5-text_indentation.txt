@@ -1,72 +1,25 @@
-Module and Function Description:
-================================
+The 5-text_indentation.py module
+======================
 
-The module defines a function to format text indentation.
+Using text_indentation
+-------------------
 
-Function text_indentation(text):
-================================
+First import text_indentation from the 5-text_indentation.py module:
 
+>>> text_indentation = __import__('5-text_indentation').text_indentation
 
-Parameters:
-===========
+>>> text_indentation(3)
+Traceback (most recent call last):
+TypeError: text must be a string
 
-text: A string of text to be formatted.
-Behavior:
-Checks if text is a string.
-Indents the text so that it separates into lines and maintains correct indentation after . , ?, : characters, and newline characters.
-
-
-Test Cases:
-===========
-
-Test case for a multiline text with different indentation:
-==========================================================
-
-text = "    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum pretium quam quis urna vehicula, quis fermentum nisi maximus. Nam nec odio eu velit congue consectetur ac ac magna. Maecenas congue tortor vitae metus interdum, eget molestie dui scelerisque. Phasellus semper metus eget leo vestibulum, et lacinia leo congue. Nam accumsan dapibus mi, at vestibulum diam cursus et. Suspendisse quis turpis nec ante vulputate luctus. Donec eu lorem sed quam aliquam vestibulum a at nulla. Aenean non ligula ac orci vehicula vehicula in quis erat. Morbi ac felis vel est vehicula congue sed ac justo. Sed ullamcorper fermentum nisl, at ultricies velit gravida in. Nullam id consectetur nunc, nec tincidunt mi. Proin ac risus sed nunc varius auctor eget vel arcu. Nam interdum fermentum tortor, non pharetra tortor vehicula id. In tristique purus id eros lobortis, vitae pharetra mi venenatis."
-
-
-Expected Output:
-================
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-Vestibulum pretium quam quis urna vehicula, quis fermentum nisi maximus.
-Nam nec odio eu velit congue consectetur ac ac magna.
-Maecenas congue tortor vitae metus interdum, eget molestie dui scelerisque.
-Phasellus semper metus eget leo vestibulum, et lacinia leo congue.
-Nam accumsan dapibus mi, at vestibulum diam cursus et.
-Suspendisse quis turpis nec ante vulputate luctus.
-Donec eu lorem sed quam aliquam vestibulum a at nulla.
-Aenean non ligula ac orci vehicula vehicula in quis erat.
-Morbi ac felis vel est vehicula congue sed ac justo.
-Sed ullamcorper fermentum nisl, at ultricies velit gravida in.
-Nullam id consectetur nunc, nec tincidunt mi.
-Proin ac risus sed nunc varius auctor eget vel arcu.
-Nam interdum fermentum tortor, non pharetra tortor vehicula id.
-In tristique purus id eros lobortis, vitae pharetra mi venenatis.
-
-
-Test case for text containing newline and sentence ending points:
-=================================================================
-
-text = "Hello World. This is a test.\nThis is another test.\n"
-
-
-Expected Output:
-================
-
+>>> text_indentation("Hello World. This is a test. This is another test.")
 Hello World.
+<BLANKLINE>
 This is a test.
-
+<BLANKLINE>
 This is another test.
+<BLANKLINE>
 
-
-Test case for text that is not a string:
-========================================
-
-text = ["Hello", "World"]
-
-
-Expected Output:
-================
-
+>>> text_indentation(["Hello", "World"])
+Traceback (most recent call last):
 TypeError: text must be a string

@@ -1,58 +1,32 @@
-4. Module that prints a square with the character #
-===================================================
+The 4-print_square.py module
+======================
 
-Import the function to be tested
-================================
-from 4-print_square.py import print_square
+Using print_square
+-------------------
 
-Module and Function Description:
-================================
+The module defines a function to print a square
+made of hashes (#) of a given size.
 
-The module defines a function to print a square made of hashes (#) of a given size.
+First import print_square from the 4-print_square.py module:
 
-Function print_square(size):
-============================
+>>> print_square = __import__('4-print_square').print_square
 
-Parameters:
-===========
+>>> print_square(4)
+####
+####
+####
+####
 
-size: An integer representing the size of the square.
+>>> print_square(0)
 
-Behavior:
-=========
+>>> print_square(-5)
+Traceback (most recent call last):
+ValueError: size must be >= 0
 
-Checks if size is an integer and greater than or equal to zero.
-Prints a square made of size rows and size columns of hashes (#).
+>>> print_square(4.3)
+Traceback (most recent call last):
+TypeError: size must be an integer
 
-
-Test Cases:
-===========
-
-Test case for a valid size:
-===========================
-
-size = 5
-Expected Output:
-#####
-#####
-#####
-#####
-#####
-
-Test case for size equal to 0:
-==============================
-
-size = 0
-Expected Output: (Empty string)
-
-Test case for size less than 0:
-===============================
-
-size = -5
-Expected to raise a ValueError with the message "size must be >= 0"
-
-Test case for size not being an integer:
-========================================
-
-size = "5"
-Expected to raise a TypeError with the message "size must be an integer"
+>>> print_square()
+Traceback (most recent call last):
+TypeError: print_square() missing 1 required positional argument: 'size'
