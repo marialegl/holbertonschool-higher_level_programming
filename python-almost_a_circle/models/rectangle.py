@@ -82,10 +82,16 @@ class Rectangle(Base):
 
     def display(self):
         """Print the Rectangle using the `#` character."""
-        for _ in range(self.__height):
-            print("#" * self.__width)
+        for _ in range(self.__y):
+            print()
+            """Print empty lines for y coordinate"""
+        for _ in range(self.height):
+            print(" " * self.x + "#" * self.width)
+            """Iterate over heigth and print x spaces
+            followed by width number of"""
 
     def __str__(self):
         """Updated the Rectangle class by overriding the
         __str__ method"""
-        return f'[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}'
+        return (f'[Rectangle] ({self.id}) {self.x}/{self.y} - '
+            f'{self.width}/{self.height}')
