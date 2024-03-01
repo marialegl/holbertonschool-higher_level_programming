@@ -42,6 +42,7 @@ class Square(Rectangle):
         self.height = value
 
     def update(self, *args, **kwargs):
+        """Assigns an argument to each attribute: id, size, x and y"""
         if args and len(args) > 0:
             """If args exists and is not empty, updates the attributes
             according to the order of the arguments."""
