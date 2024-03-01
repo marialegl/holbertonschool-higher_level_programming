@@ -94,4 +94,4 @@ class Rectangle(Base):
         """Updated the Rectangle class by overriding the
         __str__ method"""
         return (f'[Rectangle] ({self.id}) {self.x}/{self.y} - '
-            f'{self.width}/{self.height}')
+                f'{self.width}/{self.height}')
