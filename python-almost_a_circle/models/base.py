@@ -57,7 +57,11 @@ class Base:
                 jsonfile.write(cls.to_json_string(list_dicts))
 
     def from_json_string(json_string):
-        """Parses a JSON string and converts it to a Python object"""
+        """Parses a JSON string and converts it to a Python object.
+         Args:
+        json_string (str): A string representing a list
+        of dictionaries in JSON format.
+        """
         if json_string is None or len(json_string) == 0:
             return "[]"
         else:
