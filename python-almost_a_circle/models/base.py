@@ -56,6 +56,7 @@ class Base:
                 list_dicts = [o.to_dictionary() for o in list_objs]
                 jsonfile.write(cls.to_json_string(list_dicts))
 
+    @staticmethod
     def from_json_string(json_string):
         """Parses a JSON string and converts it to a Python object.
          Args:
