@@ -82,3 +82,21 @@ class Base:
                 new = cls(1)
             new.update(**dictionary)
             return new
+
+    @classmethod
+    def load_from_file(cls):
+        """Load instances from a JSON file named <Class name>.json.
+        Returns:
+        list: List of instances loaded from the JSON file.
+        """
+        filename = cls.__name__ + ".json"
+        try:
+            with open(filename, "r") as file:
+                json_string = file.read()
+                data = cls.from_json_string(json_string)
+                """Use the from_json_string method of the current class"""
+                instances = [cls.create(**obj) for obj in data]
+                """Use the create method of the current class"""
+                return instances
+        except FileNotFoundError:
+            return []
