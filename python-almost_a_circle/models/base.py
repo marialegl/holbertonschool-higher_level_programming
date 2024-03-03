@@ -32,9 +32,6 @@ class Base:
         """Define a static to_json_string method in the Base class
         that takes list_dictionaries as an argument."""
         if list_dictionaries is None or len(list_dictionaries) == 0:
-            """If the list contains dictionaries, json.dumps()
-            is used to convert the list of dictionaries to
-            a JSON string and returned."""
             return "[]"
         else:
             return json.dumps(list_dictionaries)
