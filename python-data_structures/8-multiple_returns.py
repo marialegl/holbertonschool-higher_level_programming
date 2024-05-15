@@ -1,6 +1,10 @@
 #!/usr/bin/python3
 
 def multiple_returns(sentence):
-    leng_sentence = (len(sentence))
-    new_tupla = (leng_sentence, sentence[0])
+    length = (len(sentence))
+    if length == 0:
+        first_char = None
+    else:
+        first_char = sentence[0]
+    new_tupla = (length, first_char)
     return (new_tupla)
