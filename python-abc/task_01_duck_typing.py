@@ -38,5 +38,8 @@ class Rectangle(Shape):
 
 
 def shape_info(Shape):
-    print("Area:", Shape.area())
-    print("Petimeter:", Shape.perimeter())
+    try:
+        print("Area:", Shape.area())
+        print("Perimeter:", Shape.perimeter())
+    except ValueError as e:
+        print(f"Error: {e}")
