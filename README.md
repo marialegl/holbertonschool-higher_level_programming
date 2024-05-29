@@ -14,3 +14,5 @@ Python more classes
 Python more Data Structures
 Python Test Driven Development
 Python-serialization
+RESTful API
+Containerization and Orchestration Essentials
