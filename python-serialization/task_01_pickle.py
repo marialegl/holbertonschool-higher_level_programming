@@ -5,6 +5,7 @@ objects using the pickle module.
 
 import pickle
 
+
 class CustomObject:
     def __init__(self, name, age, is_student):
         self.name = name
@@ -17,7 +18,7 @@ class CustomObject:
                 pickle.dump(self, file)
         except (IOError, pickle.PickleError) as e:
             print(f"Error serializing object: {e}")
-    
+
     @classmethod
     def deserialize(cls, filename):
         try:
