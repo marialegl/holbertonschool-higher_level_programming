@@ -40,7 +40,10 @@ user_data = {
 
 # Serialize the user data to a JSON string and save it to a file
 with open('user_data.json', 'w') as file:
-    json.dump(user_data, file)
+    json.dump(user_data, file)- serializa un objeto python a un archivo en Json
+        data = {'name': 'John', 'age': 30} with open('data.json', 'w') as file: json.dump(data, file)
+    json.dumps(user_data)- serializa un obj python en una cadena en formato Json
+        data = {'name': 'John', 'age': 30} json_string = json.dumps(data) print(json_string) # Salida: {"name": "John", "age": 30}
 
 - Deserialization (Load user data from a file):
 python
@@ -49,7 +52,8 @@ import json
 
 # Load the user data from the JSON file
 with open('user_data.json', 'r') as file:
-    loaded_user_data = json.load(file)
+    loaded_user_data = json.load(file) deserializa un archivo JSON a un obejto python
+                        json.loads(data) deserializa una cadena JSON a un obejto python
 
 print(loaded_user_data)
 
