@@ -15,7 +15,7 @@ response = requests.get(url)
 def fetch_and_print_posts():
     url = 'https://jsonplaceholder.typicode.com/posts'
     response = requests.get(url)
-    
+
     if response.status_code == 200:
         posts = response.json()
 
@@ -24,19 +24,19 @@ def fetch_and_print_posts():
     else:
         print(f"Error: {response.status_code}")
 
+
 def fetch_and_save_posts():
     url = 'https://jsonplaceholder.typicode.com/posts'
     response = requests.get(url)
 
     if response.status_code == 200:
         posts = response.json()
-        
-        # Estructurar los datos en una lista de diccionarios con las claves id, title y body
+
         posts_data = [
             {'id': post['id'], 'title': post['title'], 'body': post['body']}
             for post in posts
         ]
-        
+
         # Escribir los datos en un archivo CSV
         with open('posts.csv', mode='w', newline='', encoding='utf-8') as file:
             writer = csv.DictWriter(file, fieldnames=['id', 'title', 'body'])
