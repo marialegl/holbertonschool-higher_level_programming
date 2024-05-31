@@ -26,7 +26,7 @@ def get_users():
 
 @app.route('/status')
 def status():
-    return jsonify({"status": "OK"})
+    return "OK"
 
 
 @app.route('/users/<username>')
