@@ -5,7 +5,7 @@ import requests
 
 data = {
         "username": "Maria",
-        "name": "Maria",
+        "name": "Mary",
         "age": 35,
         "city": "San Francisco"}
 
