@@ -28,7 +28,7 @@ class MiRequestHandler(BaseHTTPRequestHandler):
             self.end_headers()
             self.wfile.write(b"OK")
 
-        else:
+        elif self.path not in ['/', '/data', '/status']:
             self.send_response(404)
             self.send_header('Content-type', 'text/plain')
             self.end_headers()
