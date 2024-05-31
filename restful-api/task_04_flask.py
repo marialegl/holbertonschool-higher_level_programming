@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """Set up a Flask application and run a development server.
-Routes with Flask to respond to different endpoints. 
-Serve JSON data using Flask. 
+Routes with Flask to respond to different endpoints.
+Serve JSON data using Flask.
 Handling and response formation in Flask.
 Handle POST requests to add new data to the API.
 """
@@ -22,17 +22,21 @@ users = {
     }
 }
 
+
 @app.route('/')
 def home():
     return "¡Bienvenido a la API de Flask!"
+
 
 @app.route('/data')
 def get_users():
     return jsonify(users)
 
+
 @app.route('/status')
 def status():
     return (jsonify({"status": "OK"}))
+
 
 @app.route('/users/<username>')
 def get_user(username):
@@ -41,6 +45,7 @@ def get_user(username):
         return (jsonify(user))
     else:
         return (jsonify({"error": "User not found"}), 404)
+
 
 @app.route('/add_user', methods=['POST'])
 def add_user():
