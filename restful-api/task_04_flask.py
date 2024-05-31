@@ -1,32 +1,3 @@
-
-Para corregir los errores en tu código Flask según los resultados de las pruebas proporcionadas, vamos a revisar cada falla y asegurarnos de que el código cumpla con los requisitos esperados por las pruebas. Aquí están las pruebas fallidas y cómo abordarlas:
-
-Test adding a user to the API.: FAIL
-Test getting a user from the API.: FAIL
-Test the status route of the API.: FAIL
-Test adding a user without a username.: FAIL
-Test adding a user with a duplicate username.: FAIL
-Vamos a revisar y ajustar el código para cada uno de estos casos.
-
-1. Test adding a user to the API
-Asegurémonos de que el endpoint /add_user está manejando correctamente las solicitudes POST para agregar un nuevo usuario.
-
-2. Test getting a user from the API
-Asegurémonos de que el endpoint /users/<username> está devolviendo correctamente los datos del usuario.
-
-3. Test the status route of the API
-Asegurémonos de que el endpoint /status está devolviendo el JSON esperado.
-
-4. Test adding a user without a username
-Asegurémonos de que el endpoint /add_user devuelve un error 400 si falta el campo username en la solicitud.
-
-5. Test adding a user with a duplicate username
-Asegurémonos de que el endpoint /add_user devuelve un error 400 si se intenta agregar un usuario con un username que ya existe.
-
-Vamos a revisar y ajustar el código:
-
-python
-Copiar código
 #!/usr/bin/python3
 """Set up a Flask application and run a development server.
 Routes with Flask to respond to different endpoints.
