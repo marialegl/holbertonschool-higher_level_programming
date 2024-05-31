@@ -29,7 +29,7 @@ class MiRequestHandler(BaseHTTPRequestHandler):
             self.wfile.write(b"OK")
 
         else:
-            self.send_error(404, 'Endpoint not found')
+            self.send_error(404)
 
 
 def run(server_class=HTTPServer, handler_class=MiRequestHandler, port=8000):
