@@ -51,7 +51,7 @@ def add_user():
     
     users[username] = {"name": data["name"], "age": data["age"], "city": data["city"]}
 
-    return jsonify({"message": "User added successfully",
+    return jsonify({"message": "User added",
                     "user": users[username]}), 201
 
 
