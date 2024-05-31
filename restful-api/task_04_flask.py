@@ -25,7 +25,7 @@ users = {
 
 @app.route('/')
 def home():
-    return "¡Bienvenido a la API de Flask!"
+    return "Welcome to the Flask API!"
 
 
 @app.route('/data')
