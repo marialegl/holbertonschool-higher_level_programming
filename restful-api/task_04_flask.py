@@ -22,7 +22,7 @@ def home():
 
 @app.route('/data')
 def get_users():
-    return jsonify(users)
+    return jsonify(list(users.keys()))
 
 
 @app.route('/status')
@@ -50,7 +50,7 @@ def add_user():
         return jsonify({"error": "User already exists"}), 400
     
     users[username] = {"name": data["name"], "age": data["age"], "city": data["city"]}
-    
+
     return jsonify({"message": "User added successfully",
                     "user": users[username]}), 201
 
