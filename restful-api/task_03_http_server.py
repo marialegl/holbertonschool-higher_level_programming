@@ -29,10 +29,10 @@ class MiRequestHandler(BaseHTTPRequestHandler):
             self.wfile.write(b"OK")
 
         elif self.path not in ['/', '/data', '/status']:
-            self.send_response(404, "Endpoint not found")
+            self.send_response(404)
             self.send_header('Content-type', 'text/plain')
             self.end_headers()
-            self.wfile.write(b"Endpoint not found")
+            self.wfile.write(b"404 Endpoint not found")
             
 
 
