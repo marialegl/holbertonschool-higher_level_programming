@@ -1,30 +1,28 @@
 #!/usr/bin/python3
 """
-Implementación de autenticación básica y basada en token (JWT) usando Flask.
+Implementation of basic and token-based (JWT) authentication using Flask.
 """
 
 from flask import Flask, jsonify, request
 from flask_httpauth import HTTPBasicAuth
 from werkzeug.security import generate_password_hash, check_password_hash
-from flask_jwt_extended import JWTManager, create_access_token, jwt_required
-from flask_jwt_extended import JWTManager, jwt_required, get_jwt_identity
-
+from flask_jwt_extended import JWTManager, create_access_token
+from flask_jwt_extended import jwt_required, get_jwt_identity
 
 app = Flask(__name__)
 auth = HTTPBasicAuth()
 
-# Configuración de usuarios en memoria
+# In-memory user configuration
 users = {
-    "user1": {"username":
-              "user1", "password": generate_password_hash("password1"),
+    "user1": {"username": "user1",
+              "password": generate_password_hash("password1"),
               "role": "user"},
-    "admin1": {"username":
-               "admin1", "password": generate_password_hash("adminpass"),
+    "admin1": {"username": "admin1",
+               "password": generate_password_hash("adminpass"),
                "role": "admin"}
 }
 
 
-# Verificación de contraseña para autenticación básica
 @auth.verify_password
 def verify_password(username, password):
     user = users.get(username)
@@ -33,19 +31,16 @@ def verify_password(username, password):
     return None
 
 
-# Ruta protegida por autenticación básica
 @app.route('/basic-protected')
 @auth.login_required
 def basic_protected():
     return jsonify(message="Basic Auth: Access Granted")
 
 
-# Configuración de JWT
 app.config['JWT_SECRET_KEY'] = 'secret-key'
 jwt = JWTManager(app)
 
 
-# Ruta de login para obtener token JWT
 @app.route('/login', methods=['POST'])
 def login():
     data = request.get_json()
@@ -61,14 +56,12 @@ def login():
     return jsonify(access_token=access_token)
 
 
-# Ruta protegida por JWT
 @app.route('/jwt-protected', methods=['GET'])
 @jwt_required()
 def jwt_protected():
     return jsonify(message="JWT Auth: Access Granted")
 
 
-# Ruta protegida por rol (solo accesible por administradores)
 @app.route('/admin-only', methods=['GET'])
 @jwt_required()
 def admin_only():
@@ -79,7 +72,6 @@ def admin_only():
     return jsonify(message="Admin Access: Granted")
 
 
-# Manejo de errores personalizados para JWT
 @jwt.unauthorized_loader
 def handle_unauthorized_error(err):
     return jsonify({"error": "Missing or invalid token"}), 401
