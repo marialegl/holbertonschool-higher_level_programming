@@ -22,6 +22,9 @@ users = {
                "role": "admin"}
 }
 
+@app.route('/')
+def index():
+    return jsonify(message="Welcome to the API")
 
 @auth.verify_password
 def verify_password(username, password):
@@ -40,6 +43,9 @@ def basic_protected():
 app.config['JWT_SECRET_KEY'] = 'secret-key'
 jwt = JWTManager(app)
 
+@app.route('/favicon.ico')
+def favicon():
+    return '', 204
 
 @app.route('/login', methods=['POST'])
 def login():
