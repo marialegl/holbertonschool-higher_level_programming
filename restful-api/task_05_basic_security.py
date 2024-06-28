@@ -34,7 +34,7 @@ def verify_password(username, password):
     return None
 
 
-@app.route('/basic-protected')
+@app.route('/basic-protected', methods=['GET'])
 @auth.login_required
 def basic_protected():
     return jsonify(message="Basic Auth: Access Granted")
@@ -54,8 +54,8 @@ def login():
     password = data.get('password')
 
     user = users.get(username)
-    if not user or not check_password_hash(user['password'], password):
-        return jsonify({"msg": "Bad username or password"}), 401
+    if not user:
+        return jsonify({"msg": "User not found"}), 404
 
     access_token = create_access_token(identity={
         'username': username, 'role': user['role']})
